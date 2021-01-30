@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import 'regenerator-runtime/runtime.js'
 
 import '../css/App.css'
 
+import { actions } from '../store'
+
 function App() {
-  const [title, setTitle] = useState([])
+  const dispatch = useDispatch()
+
+  const action = useSelector((state) => state.action)
+  const { title } = action
 
   useEffect(() => {
-    const fetch = async () => {
-      const { data } = await axios.get('/api')
-      setTitle(data.title)
-    }
-    fetch()
-  }, [])
+    dispatch(actions())
+  }, [dispatch])
 
   return (
     <div>
