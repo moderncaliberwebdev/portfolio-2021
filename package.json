@@ -11,13 +11,19 @@
     "mongoose": "^5.11.11"
   },
   "devDependencies": {
-    "concurrently": "^5.3.0"
+    "concurrently": "^5.3.0",
+    "css-loader": "^5.2.2",
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.9",
+    "sass-loader": "^10.1.1",
+    "webpack": "^5.33.2"
   },
   "scripts": {
     "start": "node server/server",
     "server": "nodemon server/server",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run compile:sass\"",
+    "compile:sass": "node-sass client/src/scss/main.scss client/src/css/style.css -w"
   },
   "repository": {
     "type": "git",

@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import 'regenerator-runtime/runtime.js'
 
-import '../css/App.css'
+//import '../css/style.css'
+import '../scss/main.scss'
 
 import { actions } from '../store'
 
