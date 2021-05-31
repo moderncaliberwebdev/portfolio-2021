@@ -22,8 +22,7 @@
     "start": "node server/server",
     "server": "nodemon server/server",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run compile:sass\"",
-    "compile:sass": "node-sass client/src/scss/main.scss client/src/css/style.css -w"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",

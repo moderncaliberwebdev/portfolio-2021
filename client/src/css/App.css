@@ -1,9 +1,8 @@
-$color-gray: #a1a1a1;
-
 h1 {
-  color: $color-gray;
+  color: #a1a1a1;
   text-align: center;
 }
+
 img {
   width: 40vw;
   margin: 0 30vw;
