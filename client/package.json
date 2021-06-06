@@ -34,6 +34,6 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0",
-    "ws": ">=7.4.6"
+    "ws": ">=6.2.2"
   }
 }
