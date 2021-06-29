@@ -1,0 +1,94 @@
+.landing {
+  position: relative;
+}
+header {
+  margin-bottom: 10rem;
+  height: 2rem;
+}
+.landing__heading {
+  font-size: 1.6rem;
+  float: left;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+}
+.landing__nav {
+  float: right;
+  text-decoration: none;
+  font-size: 1.2rem;
+  top: 0;
+  padding-top: 0.4rem;
+  z-index: 100;
+}
+.landing__nav-options {
+  float: left;
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+.home {
+  color: #fd6051;
+}
+.landing__button {
+  background-color: #fd6051;
+  color: #fff;
+  float: left;
+  border-style: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  margin-top: -1rem;
+  box-shadow: 0 1.5rem 2rem rgba(253, 96, 81, 0.28);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.landing__button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 1.5rem 2rem rgba(253, 96, 81, 0.35);
+}
+.landing__vector {
+  position: relative;
+  float: right;
+  width: 45rem;
+  z-index: 0;
+}
+.landing__welcome-container {
+  left: 0;
+  width: 45rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+}
+.landing__welcome {
+  font-size: 8rem;
+  line-height: 7rem;
+}
+.orange {
+  color: #fd6051;
+}
+.landing__copy {
+  left: 0;
+  font-size: 1.5rem;
+  width: 50rem;
+  margin-top: 1rem;
+}
+.second {
+  margin-top: 1rem;
+  left: 0;
+}
+.landing__section-heading {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  float: left;
+  font-style: italic;
+  font-size: 3rem;
+  width: 100%;
+}
+
+.projects-heading {
+  margin-top: 15rem;
+}
+
+.landing__subheading {
+  width: 100%;
+  float: left;
+}

@@ -1,9 +1,34 @@
-h1 {
-  color: #a1a1a1;
-  text-align: center;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-img {
-  width: 40vw;
-  margin: 0 30vw;
+html {
+  /* root font size is 16px so 62.5% is 10px */
+  height: 100%;
+  font-size: 62.5%;
+  color: #392033;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 120rem) {
+  html {
+    font-size: 70%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem 5rem;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 3rem 2rem;
+  }
 }

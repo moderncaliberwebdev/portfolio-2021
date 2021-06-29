@@ -7,6 +7,8 @@ import '../css/App.css'
 
 import { actions } from '../store'
 
+import Landing from './Landing'
+
 function App() {
   const dispatch = useDispatch()
 
@@ -19,8 +21,7 @@ function App() {
 
   return (
     <div>
-      <h1>{title}</h1>
-      <img src='/public/images/react.png' />
+      <Landing />
     </div>
   )
 }
