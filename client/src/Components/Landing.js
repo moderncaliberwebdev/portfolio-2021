@@ -2,6 +2,8 @@ import React from 'react'
 
 import '../css/Landing.css'
 
+import ProjectCard from './ProjectCard'
+
 function Landing() {
   return (
     <div className='landing'>
@@ -39,6 +41,47 @@ function Landing() {
       <span className='landing__subheading'>
         Clean and functional from design to development
       </span>
+      <div className='landing__project-container'>
+        <ProjectCard
+          logo='/public/images/timescripture.png'
+          heading='TimeScripture'
+          text='TimeScripture is a web app that is able to instantly find any verse of the Bible if you give it a reference'
+        />
+        <ProjectCard
+          logo='/public/images/redoak.png'
+          heading='Red Oak Landscaping'
+          text='Red Oak Landscaping is a landscaping business in Denver, PA. They specialize in hardscaping, landscaping, and seeding.'
+        />
+        <ProjectCard
+          logo='/public/images/destefano.png'
+          heading='Destefano Enterprises'
+          text='TimeScripture is a web app that is able to instantly find any verse of the Bible if you give it a reference'
+        />
+      </div>
+      <p className='projects__subhead'>Want to see more of my work?</p>
+      <button className='projects__button'>
+        Explore Full List of Projects
+      </button>
+      <h2 className='landing__section-heading'>Who am I?</h2>
+      <span className='whoami__content'>
+        I am a Full Stack Freelance Web Developer from Lancaster, PA. I
+        specifically serve the Lancaster, Berks, and Lebanon areas, but I can do
+        remote work for anyone anywhere in the world. I specialize in building
+        websites with HTML, CSS, Javascript, ReactJS, and NodeJS. I am always
+        looking for new amazing people to serve, so let’s work together to make
+        your business a success!
+      </span>
+      <img
+        src='/public/images/whoami-photo.png'
+        alt='Who Am I Photo'
+        className='whoami__photo'
+      />
+      <img
+        src='/public/images/orange-vector.png'
+        alt='Orange Vector'
+        className='whoami__vector'
+      />
+      <button className='landing__button'>Get a Free Quote</button>
     </div>
   )
 }

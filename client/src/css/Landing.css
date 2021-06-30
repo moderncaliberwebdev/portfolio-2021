@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
 .landing {
   position: relative;
 }
@@ -19,7 +21,7 @@ ul {
   font-size: 1.2rem;
   top: 0;
   padding-top: 0.4rem;
-  z-index: 100;
+  z-index: 200;
 }
 .landing__nav-options {
   float: left;
@@ -71,24 +73,105 @@ ul {
   font-size: 1.5rem;
   width: 50rem;
   margin-top: 1rem;
+  font-family: 'Nunito', sans-serif;
 }
 .second {
   margin-top: 1rem;
   left: 0;
 }
+
+.second::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .landing__section-heading {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  float: left;
   font-style: italic;
   font-size: 3rem;
   width: 100%;
+  margin-top: 10rem;
 }
 
 .projects-heading {
-  margin-top: 15rem;
+  margin-top: 35rem;
 }
 
 .landing__subheading {
   width: 100%;
-  float: left;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+}
+
+.landing__project-container {
+  width: 100%;
+  margin-bottom: 10rem;
+}
+
+.projects__subhead {
+  width: 50%;
+  margin: 1rem 25%;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.projects__button {
+  display: block;
+  margin: 0 auto;
+  width: 20rem;
+  display: block;
+  color: #fff;
+  background-color: #fd6051;
+  border-style: none;
+  border-radius: 50px;
+  padding: 1rem;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 1.5rem 2rem rgba(253, 96, 81, 0.28);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.projects__button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 1.5rem 2rem rgba(253, 96, 81, 0.35);
+}
+
+.whoami__content {
+  display: block;
+  width: 60%;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  line-height: 2.5rem;
+}
+
+.whoami__photo {
+  float: right;
+  height: 30rem;
+  margin: -20rem 9rem 0 0;
+  z-index: 100;
+  position: relative;
+  outline: 3px solid #392033;
+  outline-offset: 0.8rem;
+  transition: all 0.4s;
+}
+
+.whoami__photo:hover {
+  transform: scale(1.08);
+  outline: 5px solid #392033;
+}
+
+.whoami__photo:hover + .whoami__vector {
+  transform: rotate(10deg);
+}
+
+.whoami__vector {
+  position: absolute;
+  right: -3rem;
+  height: 45rem;
+  margin-top: -28rem;
+  z-index: 1;
+  transition: 0.4s all;
 }
