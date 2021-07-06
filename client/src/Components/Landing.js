@@ -5,6 +5,7 @@ import '../css/Landing.css'
 import ProjectCard from './ProjectCard'
 import SkillCard from './SkillCard'
 import TestimonialCard from './TestimonialCard'
+import PricingCard from './PricingCard'
 
 function Landing() {
   return (
@@ -133,6 +134,24 @@ function Landing() {
           text='Caleb has exceptional understanding of the Internet! Caleb is very patient and kind in interacting with us as customers!  The website that he made for us is incredible! He made it exactly the way we needed it, useful and attractive.The website is very easy to use and very professionally done. I use the website every day. Caleb’s work quality is exceptional, quick and accurate.'
         />
       </div>
+      <h2 className='landing__section-heading'>Pricing</h2>
+      <PricingCard
+        heading='Website Redesign'
+        price='$800'
+        feature='- Basic Front End Restructuring in Javascript'
+      />
+      <PricingCard
+        heading='Business Website'
+        price='$1,000'
+        feature='- Front End Development from scratch in Javascript'
+        middle='true'
+      />
+      <PricingCard
+        heading='Web Application'
+        price='$2,000'
+        feature='- Complex Front End & Back End Development in Javascript
+        '
+      />
     </div>
   )
 }
