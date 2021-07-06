@@ -199,3 +199,132 @@ ul {
   flex-wrap: nowrap;
   overflow-x: auto;
 }
+
+.pricingcard-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.quote__question {
+  text-align: left;
+  margin: 2rem auto 0 auto;
+  width: 40rem;
+  font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.quote__dropdown {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+:root {
+  --select-border: #392033;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
+.quote__select-container {
+  width: 40rem;
+  margin: 1rem auto;
+  border: 1px solid var(--select-border);
+  border-radius: 5px;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #392033;
+  display: grid;
+  grid-template-areas: 'select';
+  align-items: center;
+  background-color: #fff;
+}
+
+.quote__select-container::after {
+  content: '';
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+}
+
+select,
+.quote__select-container:after {
+  grid-area: select;
+}
+
+.quote__open-answer {
+  width: 40rem;
+  display: block;
+  margin: 1rem auto;
+  height: 15rem;
+  border: 1px solid #392033;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #392033;
+  resize: none;
+}
+
+.quote__open-answer:focus {
+  outline: none;
+}
+
+.details {
+  height: 4rem;
+  padding: 1rem;
+  line-height: auto;
+}
+
+.details::placeholder {
+  color: rgb(160, 160, 160);
+}
+
+.center {
+  float: none;
+  display: block;
+  margin: 2rem auto;
+  padding: 1.2rem 3.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+}
+
+.landing__footer {
+  position: absolute;
+  background-image: url('/public/images/footer-bg.png');
+  background-size: cover;
+  width: calc(100% + 10rem);
+  margin: 5rem 0 0 -5rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__logo {
+  width: 7rem;
+  margin: 3rem 0 1.5rem 0;
+}
+
+.footer__text {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: -10rem;
+  display: inline;
+}
+
+.footer__links {
+  width: 2.5rem;
+  margin: 11rem 0.2rem 0 0.2rem;
+  cursor: pointer;
+}

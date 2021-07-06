@@ -17,7 +17,7 @@ function Landing() {
             <li className='landing__nav-options home'>Home</li>
             <li className='landing__nav-options'>My Work</li>
             <li className='landing__nav-options'>About Me </li>
-            <li className='landing__nav-options'>Blog</li>
+            {/* <li className='landing__nav-options'>Blog</li> */}
             <button className='landing__button'>Get a Free Quote</button>
           </ul>
         </nav>
@@ -135,23 +135,115 @@ function Landing() {
         />
       </div>
       <h2 className='landing__section-heading'>Pricing</h2>
-      <PricingCard
-        heading='Website Redesign'
-        price='$800'
-        feature='- Basic Front End Restructuring in Javascript'
-      />
-      <PricingCard
-        heading='Business Website'
-        price='$1,000'
-        feature='- Front End Development from scratch in Javascript'
-        middle='true'
-      />
-      <PricingCard
-        heading='Web Application'
-        price='$2,000'
-        feature='- Complex Front End & Back End Development in Javascript
+      <div className='pricingcard-container'>
+        <PricingCard
+          heading='Website Redesign'
+          price='$800'
+          feature='- Basic Front End Restructuring in Javascript'
+        />
+        <PricingCard
+          heading='Business Website'
+          price='$1,000'
+          feature='- Front End Development from scratch in Javascript'
+          middle='true'
+        />
+        <PricingCard
+          heading='Web Application'
+          price='$2,000'
+          feature='- Complex Front End & Back End Development in Javascript
         '
-      />
+        />
+      </div>
+      <h2 className='landing__section-heading'>Get your free quote!</h2>
+      <span className='landing__subheading'>
+        I’d love to work with you, so tell me a little about your project so we
+        can get started right away!
+      </span>
+      <p className='quote__question'>
+        What type of project do you need completed?
+      </p>
+      <div className='quote__select-container'>
+        <select name='project-type' className='quote__dropdown'>
+          <option value='redesign'>Website Redesign</option>
+          <option value='business'>Business Website</option>
+          <option value='application'>Web Application</option>
+        </select>
+      </div>
+      <p className='quote__question'>
+        What are your budget expectations for this project?
+      </p>
+      <div className='quote__select-container'>
+        <select name='project-type' className='quote__dropdown'>
+          <option value='$'>$500 - $1,000</option>
+          <option value='$$'>$1,000 - $3,000</option>
+          <option value='$$$'>$3,000 - $5,000</option>
+          <option value='$$$$'>$5,000+</option>
+        </select>
+      </div>
+      <p className='quote__question'>
+        When do you want this project completed?
+      </p>
+      <div className='quote__select-container'>
+        <select name='project-type' className='quote__dropdown'>
+          <option value='short-time'>Within a month</option>
+          <option value='medium-time'>1 - 3 months</option>
+          <option value='long-time'>3+ months</option>
+        </select>
+      </div>
+      <p className='quote__question'>
+        What prompted you to start this project?
+      </p>
+      <textarea className='quote__open-answer'></textarea>
+      <p className='quote__question'>
+        What business goals are you trying to achieve?
+      </p>
+      <textarea className='quote__open-answer'></textarea>
+      <p className='quote__question'>
+        Tell me a little bit about what you want me to do for you.
+      </p>
+      <textarea className='quote__open-answer'></textarea>
+      <p className='quote__question'>Full Name</p>
+      <textarea
+        className='quote__open-answer details'
+        placeholder='John Doe'
+      ></textarea>
+      <p className='quote__question'>Email</p>
+      <textarea
+        className='quote__open-answer details'
+        placeholder='name@example.com'
+      ></textarea>
+      <button className='landing__button center'>Submit Project Details</button>
+      <footer className='landing__footer'>
+        <img
+          src='/public/images/logo.png'
+          alt='Modern Caliber Logo'
+          className='footer__logo'
+        />
+        <span className='footer__text'>Modern Caliber Web Development</span>
+        <div className='footer__link-container'>
+          <a href='https://dribbble.com/calebdidthis'>
+            <img
+              src='/public/images/dribbble.png'
+              alt='My Dribbble'
+              className='footer__links'
+            />
+          </a>
+          <a href='https://github.com/moderncaliberwebdev'>
+            <img
+              src='/public/images/Github.png'
+              alt='My Github'
+              className='footer__links'
+            />
+          </a>
+          <a href='https://www.instagram.com/moderncaliberwebdev/'>
+            <img
+              src='/public/images/insta.png'
+              alt='My Instagram'
+              className='footer__links'
+            />
+          </a>
+        </div>
+      </footer>
     </div>
   )
 }

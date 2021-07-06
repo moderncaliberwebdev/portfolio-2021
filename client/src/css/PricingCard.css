@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
 .pricingcard {
-  float: left;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin: 2rem 0;
   border-radius: 30px;
