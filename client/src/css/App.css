@@ -14,15 +14,21 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 1200px) {
   html {
     font-size: 70%;
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
 body {
   box-sizing: border-box;
-  padding: 3rem 5rem;
+  padding: 3rem 5rem 0 5rem;
   min-height: 100%;
   overflow-x: hidden;
   background-image: url('/public/images/background.png');
@@ -33,6 +39,6 @@ body {
 
 @media only screen and (max-width: 600px) {
   body {
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 0 2rem;
   }
 }

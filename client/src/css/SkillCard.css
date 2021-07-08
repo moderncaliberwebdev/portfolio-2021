@@ -18,6 +18,17 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .skillcard {
+    width: calc((100vw - 19rem) / 2);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .skillcard {
+    width: calc((100vw - 10rem));
+  }
+}
+
 .skillcard:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

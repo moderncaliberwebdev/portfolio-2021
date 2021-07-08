@@ -17,14 +17,22 @@
     width: calc((1400px - 16rem) / 3);
   }
 }
+@media only screen and (max-width: 800px) {
+  .projectcard {
+    width: calc((100vw - 16rem) / 2);
+    margin: 2rem 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .projectcard {
+    width: calc((100vw - 16rem));
+    margin: 2rem 0;
+  }
+}
 
 .projectcard:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.projectcard:not(:last-child) {
-  margin-right: 3rem;
 }
 
 .projectcard__logo {

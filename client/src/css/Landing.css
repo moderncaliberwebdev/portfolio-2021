@@ -3,6 +3,16 @@
 .landing {
   position: relative;
 }
+.landing__logo {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .landing__logo {
+    display: inline;
+    z-index: 100;
+    cursor: pointer;
+  }
+}
 header {
   margin-bottom: 10rem;
   height: 2rem;
@@ -12,6 +22,35 @@ header {
   float: left;
   cursor: pointer;
 }
+@media only screen and (max-width: 800px) {
+  .landing__heading {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .landing__heading {
+    text-align: center;
+    width: 60%;
+    margin: -3rem 20% 0 20%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.landing__menu {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .landing__menu {
+    display: inline;
+    float: right;
+    z-index: 100;
+    cursor: pointer;
+  }
+}
+
 ul {
   list-style-type: none;
 }
@@ -23,6 +62,13 @@ ul {
   padding-top: 0.4rem;
   z-index: 200;
 }
+
+@media only screen and (max-width: 800px) {
+  .landing__nav {
+    display: none;
+  }
+}
+
 .landing__nav-options {
   float: left;
   margin: 0 1.5rem;
@@ -38,32 +84,82 @@ ul {
   border-style: none;
   border-radius: 50px;
   padding: 1rem 2rem;
-  margin-top: -1rem;
+  margin-top: -1.2rem;
   box-shadow: 0 1.5rem 2rem rgba(253, 96, 81, 0.28);
   cursor: pointer;
   transition: all 0.3s;
+  font-family: 'Nunito', sans-serif;
 }
+
+@media only screen and (max-width: 1200px) {
+  .landing__button {
+    font-size: 1.5rem;
+  }
+}
+
 .landing__button:hover {
   transform: scale(1.1);
   box-shadow: 0 1.5rem 2rem rgba(253, 96, 81, 0.35);
 }
 .landing__vector {
-  position: relative;
+  position: absolute;
   float: right;
-  width: 45rem;
+  width: 40vw;
+  max-width: 45rem;
   z-index: 0;
+  right: -3rem;
+  top: 10rem;
 }
+@media only screen and (max-width: 800px) {
+  .landing__vector {
+    right: -1rem;
+    top: 12rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .landing__vector {
+    float: left;
+    position: relative;
+    max-width: 120vw;
+    width: 120vw;
+    left: -15vw;
+    top: 10vh;
+    overflow-x: hidden;
+  }
+}
+
 .landing__welcome-container {
   left: 0;
-  width: 45rem;
+  width: 50vw;
+  max-width: 45rem;
   display: flex;
   flex-direction: column;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-style: italic;
 }
+@media only screen and (max-width: 600px) {
+  .landing__welcome-container {
+    margin: 15rem 0 0 0;
+    width: 45rem;
+  }
+}
+
 .landing__welcome {
   font-size: 8rem;
   line-height: 7rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .landing__welcome {
+    font-size: 6rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .landing__welcome {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
 }
 .orange {
   color: #fd6051;
@@ -71,13 +167,29 @@ ul {
 .landing__copy {
   left: 0;
   font-size: 1.5rem;
-  width: 50rem;
+  width: 50vw;
+  max-width: 50rem;
   margin-top: 1rem;
   font-family: 'Nunito', sans-serif;
 }
+@media only screen and (max-width: 600px) {
+  .landing__copy {
+    margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    font-size: 2rem;
+  }
+}
+
 .second {
   margin-top: 1rem;
   left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .second {
+    display: none;
+  }
 }
 
 .second::after {
@@ -95,7 +207,12 @@ ul {
 }
 
 .projects-heading {
-  margin-top: 35rem;
+  margin-top: 25rem;
+}
+@media only screen and (max-width: 600px) {
+  .projects-heading {
+    margin-top: 60rem;
+  }
 }
 
 .landing__subheading {
@@ -106,12 +223,15 @@ ul {
 
 .landing__project-container {
   width: 100%;
-  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .projects__subhead {
   width: 50%;
-  margin: 1rem 25%;
+  margin: 1rem 25% -2rem 25%;
   text-align: center;
   display: inline-block;
   font-size: 1.2rem;
@@ -146,6 +266,24 @@ ul {
   margin: 2rem 0;
   line-height: 2.5rem;
 }
+@media only screen and (max-width: 800px) {
+  .whoami__content {
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .whoami__content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .whoami__button {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+}
 
 .whoami__photo {
   float: right;
@@ -156,6 +294,19 @@ ul {
   outline: 3px solid #392033;
   outline-offset: 0.8rem;
   transition: all 0.4s;
+}
+
+@media only screen and (max-width: 800px) {
+  .whoami__photo {
+    margin: -23rem 0 0 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .whoami__photo {
+    float: none;
+    display: block;
+    margin: 5rem auto 0 auto;
+  }
 }
 
 .whoami__photo:hover {
@@ -175,10 +326,30 @@ ul {
   z-index: 1;
   transition: 0.4s all;
 }
+@media only screen and (max-width: 800px) {
+  .whoami__vector {
+    right: -13rem;
+    margin-top: -31rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .whoami__vector {
+    display: block;
+    position: relative;
+    right: 0;
+    margin: -39rem auto 0 auto;
+  }
+}
 
 .skills__heading {
   margin-top: 20rem;
 }
+@media only screen and (max-width: 600px) {
+  .skills__heading {
+    margin-top: 10rem;
+  }
+}
+
 .skills__subhead {
   width: 100%;
   font-family: 'Nunito', sans-serif;
@@ -203,6 +374,13 @@ ul {
 .pricingcard-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.quote__heading {
+  display: block;
+  text-align: center;
 }
 
 .quote__question {
@@ -217,7 +395,7 @@ ul {
   appearance: none;
   background-color: transparent;
   border: none;
-  padding: 0 1em 0 0;
+  padding: 1.5rem 2.5rem;
   margin: 0;
   width: 100%;
   font-family: inherit;
@@ -238,7 +416,6 @@ ul {
   margin: 1rem auto;
   border: 1px solid var(--select-border);
   border-radius: 5px;
-  padding: 1.5rem 2.5rem;
   font-size: 1.5rem;
   cursor: pointer;
   color: #392033;
@@ -255,6 +432,7 @@ ul {
   background-color: var(--select-arrow);
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   justify-self: end;
+  margin-right: 2.5rem;
 }
 
 select,
@@ -300,31 +478,59 @@ select,
 }
 
 .landing__footer {
-  position: absolute;
-  background-image: url('/public/images/footer-bg.png');
-  background-size: cover;
   width: calc(100% + 10rem);
   margin: 5rem 0 0 -5rem;
-  height: 20rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: space-around;
+  height: 15rem;
 }
 
+.footer__vector {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 24rem;
+}
+
+@media only screen and (min-width: 1400px) {
+  .landing__footer {
+    margin: 5rem auto 0 auto;
+    width: 100%;
+  }
+
+  .footer__vector {
+    width: 100vw;
+    left: calc((1400px - 100vw) / 2 - 5rem);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .landing__footer {
+    width: 100%;
+    margin: 5rem 0 0 0;
+  }
+  .footer__vector {
+    left: -2rem;
+  }
+}
 .footer__logo {
   width: 7rem;
-  margin: 3rem 0 1.5rem 0;
+  margin: 5rem auto 2rem auto;
 }
 
 .footer__text {
   color: #fff;
   font-size: 2rem;
-  margin-bottom: -10rem;
   display: inline;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .footer__links {
   width: 2.5rem;
-  margin: 11rem 0.2rem 0 0.2rem;
   cursor: pointer;
+}
+.footer__link-container {
+  margin: 0 auto;
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 
 import '../css/Landing.css'
 
@@ -7,11 +7,49 @@ import SkillCard from './SkillCard'
 import TestimonialCard from './TestimonialCard'
 import PricingCard from './PricingCard'
 
+import Rellax from 'rellax'
+
 function Landing() {
+  const rellaxRef = useRef()
+
+  useEffect(() => {
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      new Rellax('.animate', {
+        // <---- Via class name
+        speed: 3,
+        center: false,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      })
+
+      new Rellax(rellaxRef.current, {
+        // <---- Via useRef element
+        speed: 3,
+        center: false,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      })
+    }
+  }, [])
+
   return (
     <div className='landing'>
       <header>
+        <img
+          src='/public/images/coralLogo.png'
+          alt='Modern Caliber Logo'
+          className='landing__logo'
+        />
         <h1 className='landing__heading'> Modern Caliber Web Development</h1>
+        <img
+          src='/public/images/menu.png'
+          alt='Menu'
+          className='landing__menu'
+        />
         <nav className='landing__nav'>
           <ul>
             <li className='landing__nav-options home'>Home</li>
@@ -22,12 +60,6 @@ function Landing() {
           </ul>
         </nav>
       </header>
-
-      <img
-        src='/public/images/logo-vector.png'
-        alt='Modern Caliber Logo Vector'
-        className='landing__vector'
-      />
       <div className='landing__welcome-container'>
         <span className='landing__welcome'>Hi! I am</span>
         <span className='landing__welcome orange'>Caleb Martin!</span>
@@ -38,6 +70,18 @@ function Landing() {
         bold designs, which will engage your consumer and promote your services.
       </p>
       <button className='landing__button second'>Get a Free Quote</button>
+      <picture>
+        <source
+          media='(max-width:600px)'
+          srcSet='/public/images/logo-vector-small.png'
+        />
+        <img
+          src='/public/images/logo-vector.png'
+          alt='Modern Caliber Logo Vector'
+          className='landing__vector'
+          ref={rellaxRef}
+        />
+      </picture>
       <h2 className='landing__section-heading projects-heading'>
         Featured Projects
       </h2>
@@ -62,7 +106,7 @@ function Landing() {
         />
       </div>
       <p className='projects__subhead'>Want to see more of my work?</p>
-      <button className='projects__button'>
+      <button className='landing__button center'>
         Explore Full List of Projects
       </button>
       <h2 className='landing__section-heading'>Who am I?</h2>
@@ -84,7 +128,9 @@ function Landing() {
         alt='Orange Vector'
         className='whoami__vector'
       />
-      <button className='landing__button'>Get a Free Quote</button>
+      <button className='landing__button whoami__button'>
+        Get a Free Quote
+      </button>
       <h2 className='landing__section-heading skills__heading'>
         Here's what I can do for your business
       </h2>
@@ -154,8 +200,10 @@ function Landing() {
         '
         />
       </div>
-      <h2 className='landing__section-heading'>Get your free quote!</h2>
-      <span className='landing__subheading'>
+      <h2 className='landing__section-heading quote__heading'>
+        Get your free quote!
+      </h2>
+      <span className='landing__subheading quote__heading'>
         I’d love to work with you, so tell me a little about your project so we
         can get started right away!
       </span>
@@ -214,6 +262,11 @@ function Landing() {
       ></textarea>
       <button className='landing__button center'>Submit Project Details</button>
       <footer className='landing__footer'>
+        <img
+          src='/public/images/footer-bg.png'
+          alt='Footer Vector'
+          className='footer__vector'
+        />
         <img
           src='/public/images/logo.png'
           alt='Modern Caliber Logo'
