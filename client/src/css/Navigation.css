@@ -104,11 +104,6 @@
     color: #fd6051;
     transform: translateX(1rem);
   }
-
-  .navigation__link:active + .navigation__background {
-    display: none;
-  }
-
   .navigation__checkbox:checked ~ .navigation__background {
     transform: scale(80);
   }

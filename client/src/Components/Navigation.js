@@ -3,6 +3,9 @@ import React from 'react'
 import '../css/Navigation.css'
 
 function Navigation() {
+  const closeNav = () => {
+    document.getElementById('navi-toggle').checked = false
+  }
   return (
     <div className='navigation'>
       <input
@@ -15,32 +18,30 @@ function Navigation() {
         <span className='navigation__icon'>&nbsp;</span>
       </label>
 
-      <div className='navigation__background'>&nbsp;</div>
+      <div className='navigation__background' id='navigation__background'>
+        &nbsp;
+      </div>
 
       <nav className='navigation__nav'>
         <ul className='navigation__list'>
           <li className='navigation__item'>
-            <label htmlFor='navi-toggle' className='nav__link-label'>
-              <a href='#' className='navigation__link'>
-                Home
-              </a>
-            </label>
-          </li>
-          <li className='navigation__item'>
-            <label htmlFor='navi-toggle' className='nav__link-label'>
-              <a href='#projects' className='navigation__link'>
-                My Work
-              </a>
-            </label>
-          </li>
-          <li className='navigation__item'>
-            <a href='#about' className='navigation__link'>
-              <label htmlFor='navi-toggle'>About Me</label>
+            <a href='#' className='navigation__link' onClick={closeNav}>
+              Home
             </a>
           </li>
           <li className='navigation__item'>
-            <a href='#quote' className='navigation__link'>
-              <label htmlFor='navi-toggle'>Get a Free Quote</label>
+            <a href='#projects' className='navigation__link' onClick={closeNav}>
+              My Work
+            </a>
+          </li>
+          <li className='navigation__item'>
+            <a href='#about' className='navigation__link' onClick={closeNav}>
+              About Me
+            </a>
+          </li>
+          <li className='navigation__item'>
+            <a href='#quote' className='navigation__link' onClick={closeNav}>
+              Get a Free Quote
             </a>
           </li>
         </ul>
