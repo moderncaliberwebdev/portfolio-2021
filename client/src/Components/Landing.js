@@ -8,6 +8,7 @@ import TestimonialCard from './TestimonialCard'
 import PricingCard from './PricingCard'
 
 import Rellax from 'rellax'
+import Navigation from './Navigation'
 
 function Landing() {
   const rellaxRef = useRef()
@@ -45,11 +46,7 @@ function Landing() {
           className='landing__logo'
         />
         <h1 className='landing__heading'> Modern Caliber Web Development</h1>
-        <img
-          src='/public/images/menu.png'
-          alt='Menu'
-          className='landing__menu'
-        />
+        <Navigation />
         <nav className='landing__nav'>
           <ul>
             <li className='landing__nav-options home'>Home</li>
@@ -82,7 +79,7 @@ function Landing() {
           ref={rellaxRef}
         />
       </picture>
-      <h2 className='landing__section-heading projects-heading'>
+      <h2 className='landing__section-heading projects-heading' id='projects'>
         Featured Projects
       </h2>
       <span className='landing__subheading'>
@@ -109,7 +106,9 @@ function Landing() {
       <button className='landing__button center'>
         Explore Full List of Projects
       </button>
-      <h2 className='landing__section-heading'>Who am I?</h2>
+      <h2 className='landing__section-heading' id='about'>
+        Who am I?
+      </h2>
       <span className='whoami__content'>
         I am a Full Stack Freelance Web Developer from Lancaster, PA. I
         specifically serve the Lancaster, Berks, and Lebanon areas, but I can do
@@ -200,7 +199,7 @@ function Landing() {
         '
         />
       </div>
-      <h2 className='landing__section-heading quote__heading'>
+      <h2 className='landing__section-heading quote__heading' id='quote'>
         Get your free quote!
       </h2>
       <span className='landing__subheading quote__heading'>

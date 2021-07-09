@@ -39,18 +39,6 @@ header {
   }
 }
 
-.landing__menu {
-  display: none;
-}
-@media only screen and (max-width: 800px) {
-  .landing__menu {
-    display: inline;
-    float: right;
-    z-index: 100;
-    cursor: pointer;
-  }
-}
-
 ul {
   list-style-type: none;
 }
