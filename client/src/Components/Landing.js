@@ -37,6 +37,10 @@ function Landing() {
     }
   }, [])
 
+  const scrollToQuote = () => {
+    document.getElementById('quote').scrollIntoView()
+  }
+
   return (
     <div className='landing'>
       <header>
@@ -53,7 +57,9 @@ function Landing() {
             <li className='landing__nav-options'>My Work</li>
             <li className='landing__nav-options'>About Me </li>
             {/* <li className='landing__nav-options'>Blog</li> */}
-            <button className='landing__button'>Get a Free Quote</button>
+            <button className='landing__button' onClick={scrollToQuote}>
+              Get a Free Quote
+            </button>
           </ul>
         </nav>
       </header>
@@ -66,7 +72,9 @@ function Landing() {
         user-friendly, responsive websites that deliver, clear information with
         bold designs, which will engage your consumer and promote your services.
       </p>
-      <button className='landing__button second'>Get a Free Quote</button>
+      <button className='landing__button second' onClick={scrollToQuote}>
+        Get a Free Quote
+      </button>
       <picture>
         <source
           media='(max-width:600px)'
@@ -127,7 +135,10 @@ function Landing() {
         alt='Orange Vector'
         className='whoami__vector'
       />
-      <button className='landing__button whoami__button'>
+      <button
+        className='landing__button whoami__button'
+        onClick={scrollToQuote}
+      >
         Get a Free Quote
       </button>
       <h2 className='landing__section-heading skills__heading'>

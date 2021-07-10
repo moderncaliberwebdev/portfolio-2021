@@ -3,6 +3,9 @@ import React from 'react'
 import '../css/PricingCard.css'
 
 function PricingCard({ heading, price, feature, middle }) {
+  const scrollToQuote = () => {
+    document.getElementById('quote').scrollIntoView()
+  }
   return (
     <div
       className='pricingcard'
@@ -40,6 +43,7 @@ function PricingCard({ heading, price, feature, middle }) {
         style={{
           boxShadow: middle ? '0 15px 20px rgba(253, 96, 81, 0.15)' : '',
         }}
+        onClick={scrollToQuote}
       >
         Let's Talk!
       </button>

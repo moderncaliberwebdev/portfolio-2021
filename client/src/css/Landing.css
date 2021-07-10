@@ -78,6 +78,10 @@ ul {
   transition: all 0.3s;
   font-family: 'Nunito', sans-serif;
 }
+.landing__button a {
+  text-decoration: none;
+  color: #fff;
+}
 
 @media only screen and (max-width: 1200px) {
   .landing__button {
