@@ -3,8 +3,8 @@ import express from 'express'
 import dotenv from 'dotenv'
 import path from 'path'
 
-// DB
-import connectDB from './config/db.js'
+// // DB
+// import connectDB from './config/db.js'
 
 // Routes
 import routes from './routes/router.js'
