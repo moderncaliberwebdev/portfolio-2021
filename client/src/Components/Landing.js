@@ -293,7 +293,7 @@ function Landing() {
           </a>
           <a href='https://github.com/moderncaliberwebdev'>
             <img
-              src='/public/images/Github.png'
+              src='/public/images/github.png'
               alt='My Github'
               className='footer__links'
             />
