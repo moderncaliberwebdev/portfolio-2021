@@ -23,7 +23,8 @@
     "start": "node server/server",
     "server": "nodemon server/server",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prod": "cd client && npm run build && cd .. & npm start"
   },
   "repository": {
     "type": "git",
