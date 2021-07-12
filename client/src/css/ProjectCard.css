@@ -66,3 +66,8 @@
   width: 12rem;
   margin: 1rem auto;
 }
+
+.projectcard__button a {
+  color: #fd6051;
+  text-decoration: none;
+}

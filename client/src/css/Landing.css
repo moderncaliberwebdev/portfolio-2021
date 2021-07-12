@@ -411,6 +411,10 @@ ul {
   --select-arrow: var(--select-border);
 }
 
+#themessage {
+  display: none;
+}
+
 .quote__select-container {
   width: 40rem;
   margin: 1rem auto;
@@ -484,6 +488,12 @@ select,
   margin: 2rem auto;
   padding: 1.2rem 3.5rem;
   font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+}
+
+#landing__form-res {
+  margin: 0 auto;
+  text-align: center;
   font-size: 1.5rem;
 }
 

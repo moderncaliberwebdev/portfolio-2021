@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 
+import axios from 'axios'
+
 import '../css/Landing.css'
 
 import ProjectCard from './ProjectCard'
@@ -39,6 +41,51 @@ function Landing() {
 
   const scrollToQuote = () => {
     document.getElementById('quote').scrollIntoView()
+  }
+
+  const formSubmit = (e) => {
+    e.preventDefault()
+
+    const projecttype = document.getElementById('project-type')
+    const price = document.getElementById('price')
+    const time = document.getElementById('time')
+    const prompted = document.getElementById('prompted')
+    const goals = document.getElementById('goals')
+    const ideas = document.getElementById('ideas')
+    const name = document.getElementById('name')
+    const email = document.getElementById('email')
+    const themessage = document.getElementById('themessage')
+    const formResponse = document.getElementById('landing__form-res')
+    const inputs = [
+      projecttype,
+      price,
+      time,
+      prompted,
+      goals,
+      ideas,
+      name,
+      email,
+    ]
+
+    if (themessage.value == '') {
+      formResponse.textContent = 'Sending...'
+      axios
+        .get(
+          //use /api for dev and take it away for prod
+          `/api/email?projecttype=${projecttype.value}&price=${price.value}&time=${time.value}&prompted=${prompted.value}&goals=${goals.value}&ideas=${ideas.value}&name=${name.value}&email=${email.value}`
+        )
+        .then((res) => {
+          const data = res.data
+          if (data.formResponse) {
+            formResponse.textContent = data.formResponse
+          } else {
+            formResponse.textContent = 'Message Sent'
+            inputs.forEach((input) => {
+              input.value = ''
+            })
+          }
+        })
+    }
   }
 
   return (
@@ -98,22 +145,24 @@ function Landing() {
           logo='/public/images/timescripture.png'
           heading='TimeScripture'
           text='TimeScripture is a web app that is able to instantly find any verse of the Bible if you give it a reference'
+          url='https://timescripture.com'
         />
         <ProjectCard
           logo='/public/images/redoak.png'
           heading='Red Oak Landscaping'
           text='Red Oak Landscaping is a landscaping business in Denver, PA. They specialize in hardscaping, landscaping, and seeding.'
+          url='https://redoakinc.org'
         />
-        <ProjectCard
+        {/* <ProjectCard
           logo='/public/images/destefano.png'
           heading='Destefano Enterprises'
           text='TimeScripture is a web app that is able to instantly find any verse of the Bible if you give it a reference'
-        />
+        /> */}
       </div>
-      <p className='projects__subhead'>Want to see more of my work?</p>
+      {/* <p className='projects__subhead'>Want to see more of my work?</p>
       <button className='landing__button center'>
         Explore Full List of Projects
-      </button>
+      </button> */}
       <h2 className='landing__section-heading' id='about'>
         Who am I?
       </h2>
@@ -221,56 +270,66 @@ function Landing() {
         What type of project do you need completed?
       </p>
       <div className='quote__select-container'>
-        <select name='project-type' className='quote__dropdown'>
-          <option value='redesign'>Website Redesign</option>
-          <option value='business'>Business Website</option>
-          <option value='application'>Web Application</option>
+        <select
+          name='project-type'
+          className='quote__dropdown'
+          id='project-type'
+        >
+          <option value='Website Redesign'>Website Redesign</option>
+          <option value='Business Website'>Business Website</option>
+          <option value='Web Application'>Web Application</option>
         </select>
       </div>
       <p className='quote__question'>
         What are your budget expectations for this project?
       </p>
       <div className='quote__select-container'>
-        <select name='project-type' className='quote__dropdown'>
-          <option value='$'>$500 - $1,000</option>
-          <option value='$$'>$1,000 - $3,000</option>
-          <option value='$$$'>$3,000 - $5,000</option>
-          <option value='$$$$'>$5,000+</option>
+        <select name='project-type' className='quote__dropdown' id='price'>
+          <option value='$500 - $1,000'>$500 - $1,000</option>
+          <option value='$1,000 - $3,000'>$1,000 - $3,000</option>
+          <option value='$3,000 - $5,000'>$3,000 - $5,000</option>
+          <option value='$5,000+'>$5,000+</option>
         </select>
       </div>
       <p className='quote__question'>
         When do you want this project completed?
       </p>
       <div className='quote__select-container'>
-        <select name='project-type' className='quote__dropdown'>
-          <option value='short-time'>Within a month</option>
-          <option value='medium-time'>1 - 3 months</option>
-          <option value='long-time'>3+ months</option>
+        <select name='project-type' className='quote__dropdown' id='time'>
+          <option value='Within a month'>Within a month</option>
+          <option value='1 - 3 months'>1 - 3 months</option>
+          <option value='3+ months'>3+ months</option>
         </select>
       </div>
+      <input type='text' id='themessage' />
       <p className='quote__question'>
         What prompted you to start this project?
       </p>
-      <textarea className='quote__open-answer'></textarea>
+      <textarea className='quote__open-answer' id='prompted'></textarea>
       <p className='quote__question'>
         What business goals are you trying to achieve?
       </p>
-      <textarea className='quote__open-answer'></textarea>
+      <textarea className='quote__open-answer' id='goals'></textarea>
       <p className='quote__question'>
         Tell me a little bit about what you want me to do for you.
       </p>
-      <textarea className='quote__open-answer'></textarea>
+      <textarea className='quote__open-answer' id='ideas'></textarea>
       <p className='quote__question'>Full Name</p>
       <textarea
         className='quote__open-answer details'
         placeholder='John Doe'
+        id='name'
       ></textarea>
       <p className='quote__question'>Email</p>
       <textarea
         className='quote__open-answer details'
         placeholder='name@example.com'
+        id='email'
       ></textarea>
-      <button className='landing__button center'>Submit Project Details</button>
+      <button className='landing__button center' onClick={formSubmit}>
+        Submit Project Details
+      </button>
+      <p id='landing__form-res'></p>
       <footer className='landing__footer'>
         <img
           src='/public/images/footer-bg.png'
