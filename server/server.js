@@ -2,12 +2,18 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import path from 'path'
+const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 
 // // DB
 // import connectDB from './config/db.js'
 
 // Routes
 import routes from './routes/router.js'
+
+//URL Settings - redirect non-www to www and http to https
+app.use(require('express-naked-redirect')())
+
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301))
 
 // server setup
 const app = express()
