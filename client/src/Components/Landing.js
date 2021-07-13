@@ -364,6 +364,13 @@ function Landing() {
               className='footer__links'
             />
           </a>
+          <a href='https://www.linkedin.com/in/calebmartinwebdev/'>
+            <img
+              src='/public/images/linkedin.png'
+              alt='My LinkedIn'
+              className='footer__links'
+            />
+          </a>
         </div>
       </footer>
     </div>
