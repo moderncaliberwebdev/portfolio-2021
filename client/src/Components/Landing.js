@@ -175,7 +175,7 @@ function Landing() {
         your business a success!
       </span>
       <img
-        src='/public/images/whoami-photo.png'
+        src='/public/images/whoami-photo.jpg'
         alt='Who Am I Photo'
         className='whoami__photo'
       />
