@@ -1,28 +1,21 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import 'regenerator-runtime/runtime.js'
 
 import '../css/App.css'
 
-import { actions } from '../store'
-
 import Landing from './Landing'
+import JesseDemo from './JesseDemo'
 
 function App() {
-  const dispatch = useDispatch()
-
-  const action = useSelector((state) => state.action)
-  const { title } = action
-
-  useEffect(() => {
-    dispatch(actions())
-  }, [dispatch])
-
   return (
-    <div>
-      <Landing />
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/jessedemo' element={<JesseDemo />} exact />
+        <Route path='/' element={<Landing />} exact />
+      </Routes>
+    </Router>
+    // <Landing />
   )
 }
 

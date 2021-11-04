@@ -8,6 +8,8 @@ module.exports = {
     proxy: {
       '/api': 'http://127.0.0.1:3000',
     },
+    // vvv fixes react router
+    historyApiFallback: true,
   },
   // the app entry point is /src/index.js
   entry: path.resolve(__dirname, 'src', 'index.js'),
